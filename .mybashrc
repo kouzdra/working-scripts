@@ -1,0 +1,4 @@
+export GOROOT=$HOME/GO/go
+export GOPATH=$GOROOT/../work/go
+export PATH=$HOME/bin:$GOROOT/bin:$HOME/jdk/bin:$PATH
+export LD_LIBRARY_PATH=${HOME}/local/lib/:${LD_LIBRARY_PATH}
