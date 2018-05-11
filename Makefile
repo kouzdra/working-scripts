@@ -7,8 +7,8 @@ git-config:
 	
 
 get:
-	cd $(KPATH); go get -d github.com/kouzdra/go-scintilla; $(MAKE) -C $(KPATH)/go-scintilla/install
 	cd $(KPATH); go get -d github.com/kouzdra/go-tools
+	cd $(KPATH); go get -d github.com/kouzdra/go-scintilla; $(MAKE) -C $(KPATH)/go-scintilla install
 	cd $(KPATH); go get -d github.com/kouzdra/go-livejournal
 	cd $(KPATH); go get -d github.com/kouzdra/go-analyzer
 	cd $(KPATH); go get -d github.com/kouzdra/go-gode
