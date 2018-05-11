@@ -6,6 +6,7 @@ git-config:
 	git config user.name  "Anton Moscal"
 	
 
+
 get:
 	cd $(KPATH); go get -d github.com/kouzdra/go-tools
 	cd $(KPATH); go get -d github.com/kouzdra/go-scintilla; $(MAKE) -C $(KPATH)/go-scintilla install
@@ -13,6 +14,14 @@ get:
 	cd $(KPATH); go get -d github.com/kouzdra/go-analyzer
 	cd $(KPATH); go get -d github.com/kouzdra/go-gode
 
+
+commit:
+	cd $(KPATH)/go-analyzer   ; git commit -a
+	cd $(KPATH)/go-gode       ; git commit -a
+	cd $(KPATH)/go-scintilla  ; git commit -a
+	cd $(KPATH)/go-tools      ; git commit -a
+	cd $(KPATH)/go-livejournal; git commit -a
+	cd $(KPATH)/working-scripts; git commit -a
 
 pull:
 	cd $(KPATH)/go-analyzer   ; git pull
