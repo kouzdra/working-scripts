@@ -16,12 +16,13 @@ get:
 
 
 commit:
-	cd $(KPATH)/go-analyzer   ; git commit -a
-	cd $(KPATH)/go-gode       ; git commit -a
-	cd $(KPATH)/go-scintilla  ; git commit -a
-	cd $(KPATH)/go-tools      ; git commit -a
-	cd $(KPATH)/go-livejournal; git commit -a
-	cd $(KPATH)/working-scripts; git commit -a
+	cd $(KPATH)/go-analyzer   ; git commit -a && \
+	cd $(KPATH)/go-gode       ; git commit -a && \
+	cd $(KPATH)/go-scintilla  ; git commit -a && \
+	cd $(KPATH)/go-tools      ; git commit -a && \
+	cd $(KPATH)/go-livejournal; git commit -a && \
+	cd $(KPATH)/working-scripts; git commit -a || \
+	exit 0
 
 pull:
 	cd $(KPATH)/go-analyzer   ; git pull
