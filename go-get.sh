@@ -1,3 +1,4 @@
+go get github.com/kouzdra/go-tests
 go get github.com/kouzdra/go-analyzer
 go get github.com/kouzdra/go-gode
 go get github.com/kouzdra/go-scintilla
