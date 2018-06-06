@@ -7,7 +7,7 @@ git-config:
 
 
 get:
-	cd $(KPATH); git clone -d git@github.com:kouzdra/go-tests.git
+	cd $(KPATH); git clone git@github.com:kouzdra/go-tests.git
 	cd $(KPATH); go get -d github.com/kouzdra/go-tools
 	cd $(KPATH); go get -d github.com/kouzdra/go-scintilla; $(MAKE) -C $(KPATH)/go-scintilla install
 	cd $(KPATH); go get -d github.com/kouzdra/go-livejournal
