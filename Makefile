@@ -15,6 +15,12 @@ get:
 	cd $(KPATH); go get -d github.com/kouzdra/go-gode
 
 
+clean:
+	$(MAKE) -C $(KPATH)/go-scintilla clean
+	$(MAKE) -C $(KPATH)/go-livejournal clean
+	$(MAKE) -C $(KPATH)/go-analyzer clean
+	$(MAKE) -C $(KPATH)/go-gode clean
+
 commit:
 	cd $(KPATH)/go-analyzer   ; git commit -a && \
 	cd $(KPATH)/go-gode       ; git commit -a && \

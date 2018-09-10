@@ -3,6 +3,10 @@
 ;; Add the original Emacs Lisp Package Archive
 (add-to-list 'package-archives
              '("elpa" . "http://tromey.com/elpa/"))
+
+(add-to-list 'package-archives
+'("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+
 ;; Add the user-contributed repository
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -11,6 +15,7 @@
 (add-to-list 'default-frame-alist '(background-color . "DarkSlateGray"))
 
 ;;--------------------------------------------------------------
+
 (setq compilation-filenames '("Makefile" "makefile"))
 
 (defun get-nearest-compilation-file ()
@@ -37,4 +42,25 @@
     )
   )
 
+(global-set-key [f2] (lambda () (interactive) (save-some-buffers 'no-confirm)))
 (global-set-key [f5] (lambda () (interactive) (compile (get-nearest-compilation-file))))
+
+;;-----------------------------------------------------------------------
+
+;; (load "/home/msk/.opam/system/share/emacs/site-lisp/tuareg-site-file") 
+(add-to-list 'load-path "/home/msk/.opam/system/share/emacs/site-lisp/")
+(add-to-list 'load-path "/home/msk/.opam/default/share/emacs/site-lisp/")
+(setq auto-mode-alist (cons '("\\.ml[iylp]?" . caml-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.sl" . go-mode) auto-mode-alist))
+;;(require 'caml-font)
+;;(require 'why3)
+;;(setq auto-mode-alist (cons '("\\.mlw" . why3-mode) auto-mode-alist))
+;;(setq auto-mode-alist (cons '("\\.why" . why3-mode) auto-mode-alist))
+;;(autoload 'caml-mode "caml" "Major mode for editing Caml code." t)
+(setq font-lock-maximum-decoration t)
+(setq compilation-auto-jump-to-first-error nil)
+
+(setq auto-mode-alist (cons '("\\.hs" . haskell-mode) auto-mode-alist))
+
+(setenv "GOROOT" (concat  (getenv "HOME") "/GO/go"))
+(setenv "GOPATH" (concat  (getenv "HOME") "/GO/work/go"))
