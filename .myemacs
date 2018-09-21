@@ -42,8 +42,25 @@
     )
   )
 
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+(global-set-key (kbd "C-d") 'duplicate-line)
+(global-set-key [f8] 'delete-whole-line) 
+(global-set-key [f3] 'next-error) 
+
+(global-set-key [f1] (lambda () (interactive) (delete-other-windows)))
+(global-set-key [f12] (lambda () (interactive) (kill-compilation)))
 (global-set-key [f2] (lambda () (interactive) (save-some-buffers 'no-confirm)))
 (global-set-key [f5] (lambda () (interactive) (compile (get-nearest-compilation-file))))
+
+(setq compilation-scroll-output t)
 
 ;;-----------------------------------------------------------------------
 
@@ -62,5 +79,5 @@
 
 (setq auto-mode-alist (cons '("\\.hs" . haskell-mode) auto-mode-alist))
 
-(setenv "GOROOT" (concat  (getenv "HOME") "/GO/go"))
-(setenv "GOPATH" (concat  (getenv "HOME") "/GO/work/go"))
+;;(setenv "GOROOT" (concat  (getenv "HOME") "/GO/go"))
+;;(setenv "GOPATH" (concat  (getenv "HOME") "/GO/work/go"))
